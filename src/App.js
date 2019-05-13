@@ -4,25 +4,25 @@ import Stories from './Stories'
 
 function App() {
   const [userQuery, setUserQuery] = useState('')
-  const [form, setForm] = useState({
-    name: '',
-    lastName: '',
-    age: 0,
-    email: ''
-  })
+  // const [form, setForm] = useState({
+  //   name: '',
+  //   lastName: '',
+  //   age: 0,
+  //   email: ''
+  // })
 
   const updateUserQuery = event => {
     setUserQuery(event.target.value)
   }
 
   useEffect(() => {
-    console.log(form)
+    // console.log(form)
   })
 
-  const handleForm = event => {
-    const { name, value } = event.target
-    setForm({ ...form, [name]: value })
-  }
+  // const handleForm = event => {
+  //   const { name, value } = event.target
+  //   setForm({ ...form, [name]: value })
+  // }
 
   const handleKeyPress = event => {
     event.key === 'Enter' && searchQuery()
@@ -37,15 +37,15 @@ function App() {
       <h1>Welcome {userQuery}</h1>
       <div className="form">
         <input value={userQuery} onChange={updateUserQuery} onKeyPress={handleKeyPress} />
-        <input name="name" placeholder="name" onChange={handleForm} />
+        {/* <input name="name" placeholder="name" onChange={handleForm} />
         <input name="lastName" placeholder="lastName" onChange={handleForm} />
         <input name="age" placeholder="age" onChange={handleForm} type="number" />
-        <input name="email" placeholder="email" onChange={handleForm} type="email" />
+        <input name="email" placeholder="email" onChange={handleForm} type="email" /> */}
         <button disabled={!userQuery} onClick={searchQuery}>Search</button>
       </div>
       <hr />
-      {/* <Joke />
-      <Stories /> */}
+      <Joke />
+      <Stories />
     </div>
   )
 }

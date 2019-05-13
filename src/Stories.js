@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo } from 'react'
+import { useFetch } from './hooks'
 
 function Stories() {
-  const [stories, setStories] = useState([])
-
-  useEffect(() => {
-    fetch('https://news-proxy-server.appspot.com/topstories')
-      .then(response => response.json())
-      .then(data => setStories(data))
-  }, [])
+  const stories = useFetch('https://news-proxy-server.appspot.com/topstories', [], 'getStories')
 
   return (
     <div className="Stories">
@@ -28,4 +23,4 @@ function Stories() {
   )
 }
 
-export default Stories;
+export default memo(Stories)
