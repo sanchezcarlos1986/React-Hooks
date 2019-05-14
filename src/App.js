@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Joke from './Joke'
-import Stories from './Stories'
+// import Joke from './Joke'
+// import Stories from './Stories'
+import Tasks from './Tasks'
 
 function App() {
   const [userQuery, setUserQuery] = useState('')
@@ -44,8 +45,9 @@ function App() {
         <button disabled={!userQuery} onClick={searchQuery}>Search</button>
       </div>
       <hr />
-      <Joke />
-      <Stories />
+      {/* <Joke />
+      <Stories /> */}
+      <Tasks />
     </div>
   )
 }
